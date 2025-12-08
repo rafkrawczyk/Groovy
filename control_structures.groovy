@@ -11,14 +11,7 @@ class Account {
     
     void deposit(List<BigDecimal> amounts) {
         for (amount in amounts) {
-            try {
-                // Try to deposit the current amount
-                deposit(amount)
-                println "Success: Deposited $amount"
-            } catch (IllegalArgumentException e) {
-                // Catch the specific error, print it, and keep looping
-                println "Skipped invalid amount ($amount): ${e.message}"
-            }
+            deposit(amount)
         }
     }
 }
@@ -26,5 +19,19 @@ class Account {
 Account account = new Account()
 
 account.deposit(350)
-account.deposit(-500)
-account.deposit([100, 40, -5])
+
+try {
+    account.deposit(-500)
+} catch (IllegalArgumentException e) {
+    println e.message
+}
+
+println account.balance
+
+try {
+    account.deposit([100, 40, -5])
+} catch (IllegalArgumentException e) {
+    println e.message
+}
+
+println account.balance
