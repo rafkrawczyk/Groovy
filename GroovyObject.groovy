@@ -38,9 +38,9 @@ def mark = new Person()
 mark.hairColor = "Blonde"
 mark.height = 190
 
-println "Hero: ${mark.hairColor}"
-println "Code: ${mark.height}"
-println "Missing Prop: ${mark.eyeColor}"
+println "Hair Color: ${mark.hairColor}"
+println "Height: ${mark.height}"
+println "Eye Color: ${mark.eyeColor}"
 
 println "Result 1: " + mark.speak()
 println "Result 2: " + mark.add(10, 20, 30)
