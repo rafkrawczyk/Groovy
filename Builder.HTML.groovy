@@ -6,7 +6,8 @@ def booksData = [
         [isbn: "978-1937785307", title: "Programming Groovy 2: Dynamic Productivity for the Java Developer", author: "Venkat Subramaniam", price: 28.92]
 ]
 
-def writer = new StringWriter()
+def file = new File("books.html")
+def writer = new FileWriter(file)
 def html = new MarkupBuilder(writer)
 
 html.books {
@@ -40,4 +41,6 @@ html.books {
     }
 }
 
-println writer.toString()
+writer.close()
+
+println "File created: ${file.absolutePath}"
