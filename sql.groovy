@@ -37,7 +37,7 @@ def employees = [
 employees.each { emp ->
     sql.execute("INSERT INTO Employee (id, first_name, last_name, role, salary) VALUES (?, ?, ?, ?, ?)", emp)
 }
-println "--- Data Inserted into (${employees.size()} rows) ---"
+println "--- Data Inserted into ${employees.size()} rows ---"
 
 def csvFile = new File("export.csv")
 
